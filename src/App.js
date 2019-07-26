@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LocationDropdown from './components/LocationDropdown'
+import ThaiLocationSelectForm from './components/ThaiLocationSelectForm'
 
 function App() {
 
@@ -11,9 +12,7 @@ function App() {
   ]
 
   return (
-    <div>
-      <LocationDropdown defaultLabel="จังหวัด" locations={provinces} />
-    </div>
+    <ThaiLocationSelectForm/>
   );
 }
 
