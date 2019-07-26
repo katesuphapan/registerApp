@@ -14,6 +14,10 @@ export default class LocationDropDown extends Component {
         this.setState({
             label: locationName
         })
+
+        if (this.props.selectedCallback) { 
+            this.props.selectedCallback(locationName)
+        }
     }
 
     render() {
@@ -33,7 +37,7 @@ export default class LocationDropDown extends Component {
                     {this.state.label}
                 </a>
 
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {
                         locations.map((location, i) => {
                             return <a className="dropdown-item" onClick={e => this.locationSelected(e)} href="#" data-id={location.id} data-name={location.name} key={location.id}>{location.name}</a>
